@@ -25,6 +25,10 @@ namespace FizzBuzz
                 {
                     Console.WriteLine("BangBuzz");
                 }
+                else if (i % 11 == 0)
+                {
+                    Console.WriteLine("Bong");
+                }
                 else if (i % 3 == 0)
                 {
                     Console.WriteLine("Fizz");
@@ -37,7 +41,9 @@ namespace FizzBuzz
                 {
                     Console.WriteLine("Bang");
                 }
+              
 
+            
                 else
                 {
                     Console.WriteLine(i);
