@@ -11,19 +11,57 @@ namespace FizzBuzz
         
         static void Main(string[] args)
         {
-            for(int i=1; i<=100; i++)
+            for(int i=1; i<=200; i++)
             {
                 if (i % 3 == 0 && i % 5 == 0)
                 {
-                    Console.WriteLine("FizzBuzz");
+                    if (i % 11 == 0)
+                    {
+                        Console.WriteLine("Bong");
+                    }
+                    if (i % 13 == 0)
+                    {
+                        Console.WriteLine("FizzFezzBuzz");
+                    }
+                    else
+                    {
+                        Console.WriteLine("FizzBuzz");
+                    }
                 }
                 else if (i % 3 == 0 && i % 7 == 0 )
                 {
-                    Console.WriteLine("FizzBang");
+                    if (i % 11 == 0)
+                    {
+                        Console.WriteLine("Bong");
+                    }
+                    if (i % 13 == 0)
+                    {
+                        Console.WriteLine("FizzFezzBang");
+                    }
+                    else
+                    {
+                        Console.WriteLine("FizzBang");
+                    }
                 }
                 else if (i % 5 == 0 && i % 7 == 0)
                 {
-                    Console.WriteLine("BangBuzz");
+                    if (i % 11 == 0)
+                    {
+                        Console.WriteLine("Bong");
+                    }
+                    if (i % 13 == 0)
+                    {
+                        Console.WriteLine("FezzBangBuzz");
+                    }
+                    else
+                    {
+                        Console.WriteLine("BangBuzz");
+
+                    }
+                }
+                else if (i % 13 == 0)
+                {
+                    Console.WriteLine("Fezz");
                 }
                 else if (i % 11 == 0)
                 {
