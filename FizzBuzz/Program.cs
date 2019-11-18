@@ -11,8 +11,11 @@ namespace FizzBuzz
         
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Console.ReadLine();
+            for(int i=1; i<=100; i++)
+            {
+                Console.WriteLine(i);
+            }
+            Console.ReadKey();
         }
     }
 }
