@@ -25,7 +25,7 @@ namespace FizzBuzz
 
 
 
-            for (int i = 1; i <= 300; i++)
+            for (int i = 1; i <= 500; i++)
             {
 
 
@@ -43,13 +43,25 @@ namespace FizzBuzz
 
                 else if (i % 3 == 0 && i % 5 == 0)
                 {
-
+                  
                     if (i % 13 == 0)
                     {
-                        Rules.AddFezz("Fizz", "Fezz", "Buzz");
+                        if (i % 17 == 0)
+                        {
+                            Rules.SwitchStrings2("Fizz", "Fezz", "Buzz");
 
+                        }
+                        else
+                        {
+                            Rules.AddFezz("Fizz", "Fezz", "Buzz");
+                        }
 
                     }
+                    else if (i % 17 == 0)
+                    {
+                        Rules.SwitchStrings("Fizz", "Buzz");
+                    }
+
                     else
                     {
                         Rules.AddRule("Fizz", "Buzz");
@@ -60,9 +72,21 @@ namespace FizzBuzz
                 {
                     if (i % 13 == 0)
                     {
-                        Rules.AddFezz("Fizz", "Fezz", "Bang");
+                        if (i % 17 == 0)
+                        {
+                            Rules.SwitchStrings2("Fizz", "Fezz", "Bang");
 
+                        }
+                        else
+                        {
+                            Rules.AddFezz("Fizz", "Fezz", "Bang");
 
+                        }
+                         
+                    }
+                    else if (i % 17 == 0)
+                    {
+                        Rules.SwitchStrings("Fizz", "Bang");
                     }
                     else
                     {
@@ -74,16 +98,27 @@ namespace FizzBuzz
                 {
                     if (i % 13 == 0)
                     {
-                        Rules.AddFezz("Fezz", "Bang", "Buzz");
+                        if (i % 17 == 0)
+                        {
+                            Rules.SwitchStrings2("Buzz", "Fezz", "Bang");
 
+                        }
+                        else
+                        {
+                            Rules.AddFezz("Buzz", "Fezz", "Bang");
 
+                        }
+                    }
+                    else if (i % 17 == 0)
+                    {
+                        Rules.SwitchStrings("Buzz", "Bang");
                     }
                     else
                     {
-                        Rules.AddRule("Bang", "Buzz");
-
+                        Rules.AddRule("Buzz", "Bang");
 
                     }
+
                 }
                 else if (i % 13 == 0)
                 {
@@ -103,7 +138,7 @@ namespace FizzBuzz
                     Console.WriteLine(Bang);
                 }
 
-
+                
                 else
                 {
                     Console.WriteLine(i);
@@ -118,17 +153,27 @@ namespace FizzBuzz
     {
 
         public string outcome { get; set; }
-        public static void AddFezz(string Rule1, string Rule2, string Rule3)
+
+        public static void AddFezz (string Rule1, string Rule2, string Rule3)
         {
             string outcome = Rule1 + Rule2 + Rule3;
             Console.WriteLine(outcome);
         }
-        public static void AddRule(string Rule1, string Rule2)
+        public static void AddRule (string Rule1, string Rule2)
         {
             string outcome = Rule1 + Rule2;
             Console.WriteLine(outcome);
         }
-
+        public static void SwitchStrings (string Rule1, string Rule2)
+        {
+            string outcome = String.Format("{1}{0}", Rule1, Rule2);
+            Console.WriteLine(outcome);
+        }
+        public static void SwitchStrings2(string Rule1, string Rule2, string Rule3)
+        {
+            string outcome = String.Format("{2}{1}{0}", Rule1, Rule2, Rule3);
+            Console.WriteLine(outcome);
+        }
     }
 
 }
